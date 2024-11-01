@@ -33,7 +33,7 @@ import (
 
 4. Run the code.
 ``` bash
-mkdir-p./data/imagery
+mkdir -p ./data/imagery
 # get images from a GPS region
 GO111MODULE=off go run1_sat.go KEY ./data/imagery
 # get images from a GPS center and a zoom level
