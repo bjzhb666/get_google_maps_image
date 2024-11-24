@@ -36,7 +36,7 @@ func main() {
 		CenterWorld string `json:"centerWorld"`
 		Filename    string `json:"filename"`
 	}
-	// 创建一个结果切片
+	
 	results := make([]Result, 0)
 
 	fmt.Printf("found %d regions\n", len(regions))
@@ -101,24 +101,24 @@ func main() {
 		f.Close()
 	}
 	// fmt.Println("results", results)
-	//将results切片转换为map
+	
 	resultsMap := make(map[string][]Result)
 	for _, result := range results {
-		// 将结果添加到对应的切片中
+		
 		resultsMap[result.Filename] = append(resultsMap[result.Filename], result)
 	}
-	//将map转换为JSON
+	
 	jsonData, err := json.Marshal(resultsMap)
 	if err != nil {
 		panic(err)
 	}
-	//创建JSON文件
+	
 	jsonFile, err := os.Create(outDir + "/results.json")
 	if err != nil {
 		panic(err)
 	}
 	defer jsonFile.Close()
-	//将JSON写入文件
+	
 	jsonFile.WriteString(string(jsonData))
 
 	// resultsMap := make(map[string]Result)
@@ -126,19 +126,19 @@ func main() {
 	// 	resultsMap[result.Filename] = result
 	// }
 
-	// // 将map转换为JSON
+	
 	// jsonData, err := json.Marshal(resultsMap)
 	// if err != nil {
 	// 	panic(err)
 	// }
 
-	// // 创建JSON文件
+	
 	// jsonFile, err := os.Create(outDir + "/results.json")
 	// if err != nil {
 	// 	panic(err)
 	// }
 	// defer jsonFile.Close()
 
-	// // 将JSON写入文件
+	
 	// jsonFile.WriteString(string(jsonData))
 }
