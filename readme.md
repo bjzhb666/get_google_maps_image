@@ -5,6 +5,7 @@ This code is used to get images from google maps <b>given a GPS region (lat1, lo
 
 The code is written in Go and uses the Google Maps Static API to get the images.
 
+This code is used in [OpenSatMap (NeurIPS 2024 D&B Track)](https://github.com/OpenSatMap/OpenSatMap-offical) to collect the data. 
 ## Usage
 Here are the steps to get the images:
 1. Install Go. The Go version we used is 1.19.
@@ -43,3 +44,13 @@ GO111MODULE=off go run1_sat_center.go KEY ./data/imagery
 ## Acknowledgement
 The code is based on the code from [roadtracer](https://github.com/mitroadmaps/roadtracer/tree/master/dataset). 
 Thanks to the authors for sharing the code.
+
+## Citation
+```
+@article{zhao2024opensatmap,
+  title={OpenSatMap: A Fine-grained High-resolution Satellite Dataset for Large-scale Map Construction},
+  author={Zhao, Hongbo and Fan, Lue and Chen, Yuntao and Wang, Haochen and Jin, Xiaojuan and Zhang, Yixin and Meng, Gaofeng and Zhang, Zhaoxiang},
+  journal={arXiv preprint arXiv:2410.23278},
+  year={2024}
+}
+```
